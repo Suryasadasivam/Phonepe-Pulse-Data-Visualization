@@ -8,12 +8,12 @@ import plotly.graph_objects as go
 import streamlit as st
 #database connection 
 mydb= mysql.connector.connect(
-    host='database-1.cxe2c4iqum5i.ap-south-1.rds.amazonaws.com',
+    host='your database',
     user="admin",
-    password="Surya0807sada",
+    password="yourpassword ",
     database='phonepeproject')
 mycursor= mydb.cursor()
-
+# state name based on geo map 
 State_name=['Andaman & Nicobar', 'Andhra Pradesh', 'Arunachal Pradesh',
        'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
        'Dadra and Nagar Haveli and Daman and Diu', 'Delhi', 'Goa',
@@ -23,7 +23,7 @@ State_name=['Andaman & Nicobar', 'Andhra Pradesh', 'Arunachal Pradesh',
        'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim',
        'Tamil Nadu', 'Telangana', 'Tripura', 'Uttarakhand',
        'Uttar Pradesh', 'West Bengal']
-
+#Aggregate Transaction 
 path= r"D:\Users\Admin\Desktop\datasciene\DemoMongoDB\phonepe\pulse\data\aggregated\transaction\country\india\state/"
 agg_state_list=os.listdir(path)
 data_name={"state":[],'year':[],'quater':[],'Transaction_type':[], "Transaction_count":[],"Transaction_amount":[] }
@@ -54,7 +54,7 @@ Agg_trans.replace(stat1,State_name, inplace=True)
 
 
 
-
+#Aggregate User
 path_2=r"D:\Users\Admin\Desktop\datasciene\DemoMongoDB\phonepe\pulse\data\aggregated\user\country\india\state/"
 user_list=os.listdir(path_2)
 
@@ -85,7 +85,7 @@ agg_user =data2.sort_values(by=['state'],ascending=True)
 stat2=agg_user.state.unique()
 agg_user.replace(stat2,State_name,inplace=True)
 
-# path3
+# path3 Map Transaction
 path_3=r"D:\Users\Admin\Desktop\datasciene\DemoMongoDB\phonepe\pulse\data\map\transaction\hover\country\india\state/"
 map_agg_trans=os.listdir(path_3)
 
@@ -124,7 +124,7 @@ for j in q:
    q1.append(b1)
 map_trans.replace(q,q1,inplace=True)
 
-#path4
+#path4 Map user 
 path_4= r"D:\Users\Admin\Desktop\datasciene\DemoMongoDB\phonepe\pulse\data\map\user\hover\country\india\state/"
 map_agg_user=os.listdir(path_4)
 
@@ -163,7 +163,7 @@ for i in w:
    w1.append(b)
 map_users.replace(w,w1,inplace=True)
 
-#path5 
+#path5 Top Transaction
 
 path_5= r"D:\Users\Admin\Desktop\datasciene\DemoMongoDB\phonepe\pulse\data\top\transaction\country\india\state/"
 top_trans=os.listdir(path_5)
@@ -195,7 +195,7 @@ top_transaction=data5.sort_values(by=['state'],ascending=True)
 stat5=top_transaction.state.unique()
 top_transaction.replace(stat5,State_name,inplace=True)
 
-#path 6
+#path 6 Top User 
 
 path_6= r"D:\Users\Admin\Desktop\datasciene\DemoMongoDB\phonepe\pulse\data\top\user\country\india\state/"
 top_user=os.listdir(path_6)
@@ -223,7 +223,7 @@ data6= pd.DataFrame(topuser_data)
 topus_er=data6.sort_values(by=["state"],ascending=True)
 stat6=topus_er.state.unique()
 topus_er.replace(stat6,State_name,inplace=True)
-
+#Migrate to sql 
 engine= create_engine("mysql+mysqlconnector://{user}:{pw}@{host}/{db}".format(user="admin",pw="Surya0807sada",host="database-1.cxe2c4iqum5i.ap-south-1.rds.amazonaws.com",db="phonepeproject"));
 Agg_trans.to_sql('Agg_trans', con=engine, if_exists="replace", chunksize=1000, index=False)
 agg_user.to_sql('agg_user',con=engine, if_exists="replace", chunksize=1000, index=False)
