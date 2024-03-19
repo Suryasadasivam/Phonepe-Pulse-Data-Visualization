@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+#database connection 
 mydb= mysql.connector.connect(
     host='database-1.cxe2c4iqum5i.ap-south-1.rds.amazonaws.com',
     user="admin",
