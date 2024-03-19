@@ -5,9 +5,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 mydb= mysql.connector.connect(
-    host='database-1.cxe2c4iqum5i.ap-south-1.rds.amazonaws.com',
+    host='Your Databases',
     user="admin",
-    password="Surya0807sada",
+    password="Your password",
     database='phonepeproject')
 mycursor= mydb.cursor()
 st.set_page_config(
@@ -389,7 +389,8 @@ def Map_user(yr,quat,colour):
   fig20.update_layout(template="plotly_dark")
   fig20.update_traces(colorscale=colour)
   return fig20
-   
+
+# Stream Lit 
 
 page = st.sidebar.selectbox("Select", ["About","Transaction", "User"], index=0)
 
