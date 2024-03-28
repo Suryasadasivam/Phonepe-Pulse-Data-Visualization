@@ -11,7 +11,7 @@ Using Python and Pandas to clean and structure the data.
 # 3. Database Insertion:
 Storing transformed data in a MYSQL database.
 
-#4. Dashboard Creation:
+# 4. Dashboard Creation:
 Using Streamlit and Plotly to build an interactive dashboard.
 
 # 5. Data Retrieval:
