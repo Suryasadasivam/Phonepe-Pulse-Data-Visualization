@@ -26,3 +26,7 @@ Fetching data from the database to dynamically update the dashboard.
 - Plotly: A library for creating interactive and dynamic visualizations, including geo maps.
 - GitHub: For hosting the project's code repository.
 - Code Editor/IDE: An integrated development environment to write and manage the code.
+
+**Contributing:**
+
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or create a pull request.
