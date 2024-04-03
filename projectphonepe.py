@@ -224,7 +224,7 @@ topus_er=data6.sort_values(by=["state"],ascending=True)
 stat6=topus_er.state.unique()
 topus_er.replace(stat6,State_name,inplace=True)
 #Migrate to sql 
-engine= create_engine("mysql+mysqlconnector://{user}:{pw}@{host}/{db}".format(user="admin",pw="yourpassword",host="database-1.cxe2c4iqum5i.ap-south-1.rds.amazonaws.com",db="phonepeproject"));
+engine= create_engine("mysql+mysqlconnector://{user}:{pw}@{host}/{db}".format(user="admin",pw="yourpassword",host="yourdatabase",db="phonepeproject"));
 Agg_trans.to_sql('Agg_trans', con=engine, if_exists="replace", chunksize=1000, index=False)
 agg_user.to_sql('agg_user',con=engine, if_exists="replace", chunksize=1000, index=False)
 map_trans.to_sql('map_trans',con=engine, if_exists="replace", chunksize=1000, index=False)
