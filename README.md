@@ -30,3 +30,10 @@ Fetching data from the database to dynamically update the dashboard.
 **Contributing:**
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or create a pull request.
+
+![image](https://github.com/Suryasadasivam/Phonepe-Pulse-Data-Visualization/assets/162082177/179a81cc-5c0c-44c8-bc44-5779bbddcfb4)
+
+![image](https://github.com/Suryasadasivam/Phonepe-Pulse-Data-Visualization/assets/162082177/41fff99b-85c2-42ff-a7fb-bc1251182d6a)
+
+
+
