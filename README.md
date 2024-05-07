@@ -1,4 +1,4 @@
-# Phonepe-Pulse-Data-Visualization
+# Phonepe-Pulse-Data-Visualization_project2
 
  The aim of this project is to develop a solution that extracts, transforms, and visualizes data from the Phonepe Pulse GitHub repository. The process involves:
 
